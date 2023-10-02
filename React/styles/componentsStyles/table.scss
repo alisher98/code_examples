@@ -1,0 +1,68 @@
+@import "../consts";
+
+.table-wrapper{
+  border-radius: 20px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  overflow: auto;
+  height: calc(100vh - 100%);
+  min-height: calc(100vh - 64px);
+  box-sizing: border-box;
+  background: $black-color;
+}
+.table{
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  line-height: 17px;
+  font-style: normal;
+  min-height: 100%;
+  &__head{
+    background-color: $act-table-head-bg;
+    &-item{
+      padding: 13px 10px 21px;
+      span{
+        padding-right: 8px;
+      }
+      .icon {
+        stroke: white;
+      }
+    }
+    //&-item *:hover {
+    //  stroke: #CD572A;
+    //  fill: none;
+    //  color: #CD572A;
+    //}
+  }
+  &__body-item{
+    position: relative;
+    background-color: $light-black;
+    border: 0.5px solid #424043;
+    font-size: 11px;
+    line-height: 13px;
+    td{
+      padding: 28px 0;
+      text-align: center;
+      border: 2px solid #424043;
+      border-top: none;
+      border-bottom: none;
+      margin-bottom: 10px;
+    }
+    td:last-child{
+      color: $orange-color;
+    }
+  }
+  &__body-item{
+    border-top: 10.5px solid #424043;
+  }
+  &__body-item{
+    border-top: 0;
+  }
+  &__body-border{
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    background-color: $act-table-head-bg;
+  }
+}

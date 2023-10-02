@@ -1,0 +1,154 @@
+$table-padding: 0 20px;
+$box-vertical-margin: 10px;
+
+.rfq-emails {
+  width: 640px;
+  z-index: $v--z-index-backdrop-above-a !important; // TODO: z-index in separate variables globally
+  margin-left: 20px;
+  background-color: $v--color-alice-blue-c;
+  overflow: hidden;
+  &__header {
+    position: relative;
+    background-color: #fff;
+  }
+  &__send {}
+  &__cancel {
+    border: 1px solid #b0b4bc;
+  }
+  &__send,
+  &__cancel {
+    border-radius: 3px;
+    width: 120px;
+  }
+  &__body {
+    padding-top: $box-vertical-margin;
+    height: 495px;
+    overflow-y: auto;
+    &--empty {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 13px;
+    }
+  }
+  &__footer {
+    text-align: right;
+    padding: 20px;
+    background-color: #fff;
+  }
+  &__status {
+    &--success {
+      color: #008000;
+    }
+    &--warning {
+      color: #d4655d;
+    }
+  }
+  &__close {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+  }
+}
+
+.rfq-emails-box {
+  background-color: #fff;
+  margin-bottom: $box-vertical-margin;
+  &__header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+    padding: $table-padding;
+    border-top: 1px solid #d3dee3;
+    border-bottom: 1px solid #d3dee3;
+  }
+  &__vendor-name {
+    font-weight: 700;
+  }
+  &__vendor-contacts {
+    font-size: 13px;
+    font-weight: 600;
+  }
+  &__select {
+    &-name {
+      font-weight: 700;
+    }
+  }
+}
+
+.rfq-emails-table {
+  &__header {
+    height: 40px;
+  }
+  &__td {}
+  &__th {
+    font-weight: 700;
+    text-transform: none;
+  }
+  &__td,
+  &__th {
+    font-size: 13px;
+    color: #161719;
+    word-break: break-all;
+    &._pn {
+      width: 150px;
+    }
+    &._description {
+      width: 275px;
+    }
+    &._status {
+      width: 90px;
+    }
+    &._qty {
+      width: 65px;
+    }
+    &._action {
+      width: 25px;
+      padding-right: 0;
+    }
+  }
+  &__td {
+    padding: 10px 5px 10px 0;
+  }
+  &__row {
+    background-color: $v--table-bgcolor-row-even;
+    border-bottom-color: $v--table-border-color;
+    &--center {
+      justify-content: center;
+    }
+  }
+  &__row,
+  &__header {
+    padding: $table-padding;
+  }
+  &__body {
+    overflow-x: hidden;
+  }
+  &__btn-clear {
+    padding: 0;
+  }
+  &__btn {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  &__select {
+    .el-input__inner {
+      height: 26px;
+      padding-top: 4px;
+      padding-bottom: 4px;
+    }
+  }
+  &__footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    padding: 0 20px;
+    &-left {}
+    &-right {}
+  }
+}

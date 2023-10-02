@@ -1,0 +1,79 @@
+@import "../../styles/consts";
+
+.preview{
+  padding: 20px 0 91px;
+  font-family: "Museo Sans Cyrl 500";
+  &__title{
+    @include section-title;
+  }
+  &__block{
+    display: flex;
+    justify-content: space-between;
+    &-message{
+      width: 51%;
+      &__tab{
+        height: 100%;
+        .ant-tabs-tab-btn{
+          text-transform: uppercase;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 23px;
+        }
+        &-wrapper{
+          width: 100%;
+          height: 100%;
+          border: 1px solid #3D3D3D;
+          * {
+            color: #FFFFFF;
+          }
+        }
+        .ql-editor{
+          height: 749px - 12px;
+        }
+      }
+    }
+    &-setting{
+      width: 40%;
+      &__wrapper{
+        .time-wrapper{
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 19px;
+          .preview__block-setting__time,
+          .preview__block-setting__date{
+            @include time-picker;
+            width: 250px;
+          }
+        }
+        .switch{
+          margin-bottom: 14px;
+        }
+      }
+      &__title{
+        @include section-block-title;
+        margin-bottom: 9px;
+        margin-top: 24px;
+      }
+      .top-title{
+        margin-top: 12px;
+      }
+      &__deps{
+        display: flex;
+        border: 1px solid #3D3D3D;
+        padding: 7px 16px;
+        flex-wrap: wrap;
+        height: 96px;
+        overflow-y: scroll;
+        .tag{
+          margin: 0 5px 10px 0;
+        }
+      }
+      .ant-picker:hover, .ant-picker-focused{
+        border-color: #3D3D3D;
+      }
+    }
+  }
+}
+.ant-picker{
+  background: transparent;
+}

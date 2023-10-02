@@ -1,0 +1,124 @@
+.rfq-block-vendor {
+  &__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 30px;
+    @media (min-width: 1921px) {
+      justify-content: space-around;
+    }
+  }
+  &__col {
+    min-width: 250px;
+    max-width: 400px;
+    flex: 1 0 auto;
+    &--center {
+      min-width: 260px;
+      padding: 0 20px;
+    }
+  }
+  &__title {
+    padding-bottom: 14px;
+    margin-bottom: 25px;
+    font-size: 13px;
+    font-weight: 700;
+    color: $v--color-woodsmoke;
+    text-transform: capitalize;
+    border-bottom: 1px solid $v--border-base-color;
+  }
+  &__input {
+    font-weight: 600;
+  }
+}
+
+.vendor-contacts-table {
+  width: 782px;
+  border-radius: 5px;
+  &__content {}
+  &__header {
+    height: 55px;
+    font-weight: 600;
+    align-items: center;
+    border-bottom: 1px solid rgba(122, 129, 150, 0.3) !important;
+    color: #a1a8bd;
+  }
+  &__zebra {
+    &:nth-of-type(even) { background-color: #f2f6fa; }
+    &:nth-of-type(odd) { background-color: #e6eef7; }
+  }
+  .el-table__row {
+    cursor: pointer;
+    &.current-row {
+      .svg-icon-star-empty:not(.svg-icon-star-empty--full) {
+        stroke: $v--color-white;
+      }
+    }
+  }
+}
+
+.form-vendor-contact {
+  background-color: $v--color-white;
+  border: 1px solid $v--border-base-color;
+  border-radius: $v--border-radius-base;
+  &__header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    min-height: 24px;
+    padding: 3px 8px;
+  }
+  &__title {
+    //color : #606479;
+    padding: 0;
+    padding-top: 5px;
+  }
+  &__name {
+    flex-grow: 1;
+    padding: 0;
+  }
+  &__input {
+    font-weight: 600;
+  }
+  &__info {
+    padding: 10px 20px 0 20px;
+  }
+  &__rating {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    &-btn {
+      margin-left: 15px;
+    }
+  }
+}
+
+.vendor-contacts-dropdown {
+  width: auto;
+  &__btn {
+    padding: 0 3px;
+  }
+  &__box {
+    width: 782px;
+    transform: translateX(-33px);
+    .popper__arrow {
+      //left: 5px !important;
+    }
+  }
+}
+
+.button {
+  &-add-contact,
+  &-save-contact-rating {
+    padding: 0;
+    cursor : pointer;
+    font-size: 13px;
+    font-weight: 600;
+    color: $v--color-san-marino;
+    text-align: left;
+  }
+  &-pin-contact {
+    padding: 0;
+    margin-right: 5px;
+  }
+}

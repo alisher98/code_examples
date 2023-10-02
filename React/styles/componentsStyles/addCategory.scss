@@ -1,0 +1,19 @@
+.add-form{
+  padding: 7px 10px;
+  display: flex;
+  flex-direction: column;
+  &__input{
+    margin-bottom: 10px;
+    border: 1px solid #727273;
+    background: transparent;
+    padding: 4px 10px;
+    outline: none;
+  }
+  &__btn{
+    background-color: #CD572A;
+    border: none;
+    cursor: pointer;
+    color: #FFFFFF;
+    padding: 4px 0;
+  }
+}

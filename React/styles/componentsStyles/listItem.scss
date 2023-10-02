@@ -1,0 +1,13 @@
+@import "./src/styles/consts";
+
+.list-item{
+  background-color: $black-color;
+  padding: 23px 10.7% 23px 8.4%;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.icon-wrapper{
+  display: flex;
+  align-items: center;
+}

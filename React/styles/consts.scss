@@ -1,0 +1,83 @@
+$white-color: #ffffff;
+$orange-color: #CD572A;
+$light-orange-color: #E84E0E;
+$black-color: #212122;
+$gray-color: #3D3D3D;
+$light-black: #2D2B2E;
+$act-table-head-bg: #202021;
+$loading-blur-bg: #E5E5E5;
+
+$font-color-black: #202021;
+
+@mixin section-title{
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 30px;
+  color: #FFFFFF;
+  margin-bottom: 24px;
+  font-family: 'Museo Sans Cyrl 700';
+}
+
+@mixin section-block-title{
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 23px;
+  text-transform: uppercase;
+  color: #727273;
+  font-family: "Museo Sans Cyrl 500";
+}
+
+@mixin time-picker{
+  height: 45px;
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: 1px solid #3D3D3D;
+  .ant-picker-input{
+    display: flex;
+    flex-direction: row-reverse;
+    span{
+      margin-right: 17px;
+    }
+    input{
+      color: #FFFFFF;
+    }
+  }
+  .ant-picker-clear{
+    background: transparent;
+    svg{
+      fill: #727273;
+    }
+  }
+  svg{
+    fill: #727273;
+  }
+  input::placeholder{
+    color: #FFFFFF;
+  }
+}
+
+@mixin selection{
+  border: 1px solid #3D3D3D;
+  color: #FFFFFF;
+  font-size: 15px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+}
+
+@mixin search-icon{
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 0;
+  bottom: 0;
+  left: 15px;
+  margin: auto 0;
+  * {
+    stroke: #727273;
+  }
+  rect {
+    fill: #727273;
+  }
+}

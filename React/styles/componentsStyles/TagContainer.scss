@@ -1,0 +1,23 @@
+.tag-container{
+  border: 1px solid #3D3D3D;
+  padding: 0 16px;
+  height: 190px;
+  overflow-y: scroll;
+}
+.tag-dep{
+  &__title{
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 23px;
+    text-transform: uppercase;
+    color: #727273;
+    margin: 9px 0;
+  }
+  &__items{
+    display: flex;
+    flex-wrap: wrap;
+    .tag{
+      margin: 0 5px 10px 0;
+    }
+  }
+}

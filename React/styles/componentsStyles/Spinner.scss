@@ -1,0 +1,38 @@
+.spinner span{
+  position: absolute;
+  top: 400px;
+  right: 0;
+  left: 0;
+  margin: auto;
+}
+
+.acces_spinner{
+  display: block;
+  margin-top: 80px;
+  & span {
+    font-size: 50px !important;
+  }
+}
+
+.post_spinner{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  & span {
+    font-size: 50px !important;
+  }
+}
+
+.for_checkbox{
+  & span{
+    font-size: 35px !important;
+    margin-bottom: 10px;
+  }
+}
+
+
+.cont{
+  position: absolute;
+  bottom: -310px; 
+  left: 50%;
+}

@@ -1,0 +1,85 @@
+@import "src/styles/consts";
+
+.btn{
+  border: 1px solid #FFFFFF;
+  box-sizing: border-box;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.main-btn{
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: bold;
+  background: transparent;
+  color: $white-color;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  width: 62%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-btn{
+  font-size: 14px;
+  line-height: 19px;
+  padding: 5px 16px;
+  background: #3D3D3D;
+  border-radius: 43px;
+  border: none;
+  color: white;
+}
+
+.save-btn{
+  background: #E84E0E;
+  border-radius: 43px;
+  color: white;
+  font-size: 14px;
+  line-height: 19px;
+  padding: 5px 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dark-btn{
+  margin: 5px 7px;
+}
+.light-btn{
+  margin: 5px 7px;
+}
+.add-btn{
+  width: 125px;
+  height: 30px;
+  background-color: #CD572A;
+  border-radius: 15px;
+  color: #FFFFFF;
+  border: none;
+  position: absolute;
+  bottom: 18px;
+  left: 15px;
+}
+
+
+
+//.apply-btn{
+//  background: $light-orange-color;
+//  border-radius: 10px;
+//  border: none;
+//}
+//
+//.reset-btn{
+//  border: 1px solid $light-orange-color;
+//  border-radius: 10px;
+//}
+//
+//.task-btn{
+//  padding: 13px 45px;
+//  border: 1px solid #FFFFFF;
+//  border-radius: 5px;
+//  margin-right: 30px;
+//  font-size: 20px;
+//  line-height: 24px;
+//  font-family: "Museo Sans Cyrl 700";
+//}

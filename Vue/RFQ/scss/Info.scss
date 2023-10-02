@@ -1,0 +1,40 @@
+.rfq-block-info {
+  max-width: 870px;
+  &__group {
+    flex-grow: 1;
+    max-width: 264px;
+    &-textarea {
+      margin-bottom: 26px;
+    }
+    &--pad {
+      margin: 0 20px;
+    }
+    &--terms {
+      margin-left: 20px;
+      max-width: none;
+    }
+  }
+  &__input-terms,
+  &__select-terms {
+    flex-grow: 1;
+    max-width: 264px;
+    &:after {
+      position: absolute;
+      right: -19px;
+      top: 15px;
+      display: inline-flex;
+      content: '';
+      width: 8px;
+      height: 1px;
+      margin: 0 5px;
+      background-color: #a1a7bd;
+    }
+  }
+  &__textarea {
+    padding: 9px 11px;
+  }
+  &__terms {
+    display: flex;
+    flex-direction: row;
+  }
+}

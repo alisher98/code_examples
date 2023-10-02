@@ -1,0 +1,52 @@
+.tag{
+  background: #E84E0E;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 18px;
+  display: inline-block;
+  align-items: center;
+  color: #202021;
+  padding: 6px 10px;
+  flex-wrap: wrap;
+  height: 30px;
+  span:nth-child(1){
+    margin-right: 13px;
+  }
+  span:nth-child(2){
+    cursor: pointer;
+  }
+}
+
+.tag-item{
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  color: #202021;
+  background: #E84E0E;
+  padding: 0 10px;
+  margin: 4px 13px 4px 0;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  span:nth-child(1){
+    margin-right: 16px;
+  }
+}
+.close{
+  display: flex;
+  align-items: center;
+  padding: 6px 10px;
+  background: #E84E0E;
+  font-size: 15px;
+  line-height: 18px;
+  font-family: 'Museo Sans Cyrl 500';
+  margin: 3px 8px 3px 0;
+  span{
+    margin-right: 13px;
+    color: #202021;
+  }
+  svg{
+    cursor: pointer;
+  }
+}

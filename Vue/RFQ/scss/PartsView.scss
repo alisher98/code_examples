@@ -1,0 +1,19 @@
+.rfq-parts-view {
+  &__header {}
+  &__body {
+    display: flex;
+    flex-direction: row;
+  }
+  &__left {
+    min-width: 850px;
+    flex: 1 1 auto;
+  }
+  &__right {
+    width: 635px;
+    margin-left: 20px;
+  }
+  &--disabled * {
+    pointer-events: none;
+    opacity: .95;
+  }
+}

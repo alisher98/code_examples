@@ -1,0 +1,24 @@
+input[type="checkbox"] {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.checkbox {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border: 1px solid #3D3D3D;
+  border-radius: 50%;
+  background-color: #202021;
+  cursor: pointer;
+}
+
+.checkbox--active {
+  background-image: url("../../assets/images/icon/accessPageIcons/checked-icon.svg");
+  background-size: contain;
+}

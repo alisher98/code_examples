@@ -1,0 +1,454 @@
+/*--------------------
+   Parts list block
+----------------------*/
+.rfq-parts-list {
+  position: relative;
+  border-radius: $v--border-radius-base;
+  background-color: $v--color-white;
+  border: 1px solid $v--color-hawkes-blue;
+  margin-top: 5px;
+  &__body {
+    position: relative;
+  }
+  &__footer {
+    padding: 13px 10px 10px;
+  }
+  &__actions {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 16px;
+  }
+  &__view {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 13px;
+    border-top: 1px solid #e1e2e8;
+  }
+  &__add {
+    margin-right: 5px;
+    font-weight: 700;
+    color: $v--color-wild-blue-yonder;
+    text-transform: uppercase;
+    &-icon {
+      margin-right: 4px;
+      pointer-events: none;
+    }
+    &--multi {
+      margin-left: auto;
+    }
+  }
+}
+
+/*--------------------
+    Parts table
+----------------------*/
+.rfq-parts-table {
+  $parent-class: &;
+  position: relative;
+  z-index: 1998;
+  /*--------------------
+     full table styles
+  ----------------------*/
+  &--full {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 30px 10px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 8px 0 rgba(0, 0, 0, .1);
+    background-color: $v--color-white;
+    #{$parent-class} {
+      &__th,
+      &__col {
+        display: inline-block;
+        margin-right: 20px;
+        flex-grow: 1;
+        &._ready {
+          margin-right: 5px;
+        }
+        &._line {
+          margin-right: 5px;
+          width: 27px;
+        }
+        &._sales-type {
+          margin-right: 0;
+        }
+      }
+      &__header,
+      &__row {
+        height: auto;
+      }
+      &__row {
+        &:first-child {
+          border-radius: 0;
+        }
+      }
+      &__part-number {
+        white-space: pre-line;
+      }
+    }
+
+  }
+  /*----------------------
+      table base grid
+  -----------------------*/
+  &__header {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  &__scroll {
+    max-height: 390px;
+  }
+  &__header,
+  &__row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 36px;
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+  &__th,
+  &__col {
+    display: flex;
+    flex-shrink: 0;
+    line-height: 16px;
+    &._ready {
+      flex-shrink: 0;
+      width: 30px;
+    }
+    &._line {
+      flex-shrink: 1;
+      width: 25px;
+    }
+    &._part-number {
+      flex-grow: 0;
+      flex-shrink: 0;
+      align-items: center;
+      width: 110px;
+    }
+    &._description {
+      width: 150px;
+    }
+    &._vendor-name {
+      width: 100px;
+    }
+    &._qty {
+      width: 50px;
+    }
+    &._price {
+      width: 240px;
+    }
+    &._total {
+      width: 240px;
+    }
+    &._price,
+    &._total {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    &._rate {
+      width: 50px;
+    }
+    &._delivery {
+      width: 70px;
+    }
+    &._sales-type {
+      width: 60px;
+      text-transform: capitalize;
+    }
+    &._action {
+      display: inline-flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 45px;
+      margin-left: auto;
+    }
+  }
+  &__th {
+    font-size: 12px;
+    font-weight: 700;
+    color: $v--color-woodsmoke;
+  }
+  &__row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 37px;
+    padding: 8px 10px;
+    font-size: 13px;
+    cursor: pointer;
+    border-bottom: 1px solid $v--table-border-color;
+    &:nth-child(1) {
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
+    &:nth-child(odd) {
+      background-color: $v--table-bgcolor-row-odd;
+    }
+    &:nth-child(even) {
+      background-color: $v--table-bgcolor-row-even;
+    }
+    &--active,
+    &--error {
+      color: $v--color-white;
+      .form-checkbox__input:checked ~ .form-checkbox__label,
+      .form-checkbox__input ~ .form-checkbox__label {
+        border-color: $v--color-white;
+        background-color: $v--color-white;
+      }
+      .form-checkbox__icon {
+        fill: $v--color-san-marino;
+      }
+      #{$parent-class}__input:not(:focus) {
+        color: $v--color-white;
+      }
+      #{$parent-class} {
+        &__btn-icon {
+          fill: $v--color-white;
+        }
+        .svg-icon-pencil {
+          stroke: $v--color-white;
+        }
+      }
+      #{$parent-class} {
+        &__price {
+          color: #acd99a;
+        }
+        &__cost {
+          color: #ffccd2;
+        }
+        &__diff {
+          color: #d6d3ff;
+        }
+      }
+     }
+    &--active,
+    &--active:nth-child(odd),
+    &--active:nth-child(even) {
+      background-color: $v--color-san-marino;
+      border-color: $v--color-san-marino;
+    }
+    &--error,
+    &--error:nth-child(odd),
+    &--error:nth-child(even) {
+      background-color: $v--color-persian-red;
+      border-color: $v--color-persian-red;
+      &#{$parent-class}__row--active {
+        background-color: $v--color-persian-red;
+        border-color: $v--color-persian-red;
+      }
+    }
+  }
+  /*--------------------
+       table elements
+  ----------------------*/
+  &__price {
+    color: #248000;
+  }
+  &__cost {
+    color: #F4001E;
+  }
+  &__diff {
+    color: #1D0FFF;
+  }
+  &__input {
+    display: inline-block;
+    padding: 0 3px;
+    width: 100%;
+    line-height: 1;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    border: none;
+    background-color: transparent;
+    &:focus {
+      outline: none;
+      background-color: $v--color-alice-blue-b;
+    }
+    &:read-only {
+      pointer-events: none;
+    }
+  }
+  &__close {
+    position: absolute;
+    right: 3px;
+    top: 5px;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    background: none;
+  }
+  &__btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    &-icon {
+      pointer-events: none;
+    }
+  }
+  &-warning {
+    color: #ff7171;
+    padding-left: 5px;
+  }
+}
+
+/*--------------------
+  Add Parts dialog
+----------------------*/
+
+.rfq-add-parts-dialog {
+  width: 760px;
+  .el-dialog__body {
+    padding: 0;
+  }
+  .el-dialog__footer {
+    padding-top: 20px;
+  }
+}
+
+.rfq-add-parts {
+  &__action {
+    padding: 10px 20px;
+  }
+  &__btn-add {
+    padding: 10px 17px;
+    &:disabled {
+      opacity: .4;
+    }
+  }
+  &__btn-action {
+    padding: 10px 0;
+    color: $v--color-san-marino;
+    font-size: 13px;
+    font-weight: 700;
+    //text-transform: uppercase;
+    &--text-mode {
+      padding-left: 18px;
+      margin-left: 15px;
+    }
+  }
+  &__btn-icon {
+    margin-right: 6px;
+    &--arrows {
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 12px;
+      height: 12px;
+    }
+  }
+  &__input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+  }
+  &__textarea {
+    .el-textarea__inner {
+      overflow: hidden;
+      padding: 0;
+      border: none;
+    }
+  }
+  &__select {
+    .el-input {
+      //width: 55px;
+      &.is-disabled {
+        opacity: .4;
+        .el-input__inner {
+          background-color: transparent;
+        }
+      }
+    }
+    .el-input__inner {
+      //padding: 0 30px 0 0;
+      padding-left: 10px;
+      height: 20px !important;
+      line-height: 20px !important;
+      border: none;
+    }
+    &-dropdown {
+      .el-select-dropdown__item {
+        padding-left: 10px;
+      }
+    }
+  }
+
+}
+
+.rfq-add-parts-textarea {
+  width: 100%;
+  height: 213px;
+  &__wrapper {
+    padding: 0 20px;
+  }
+}
+
+/*------------------------
+  Add Parts dialog table
+--------------------------*/
+.rfq-add-parts-table {
+  &__header,
+  &__row {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid $v--border-base-color;
+    &:first-child {
+      border-top: 1px solid $v--border-base-color;
+    }
+  }
+  &__th,
+  &__col {
+    border-right: 1px solid $v--border-base-color;
+    &._checkbox {
+      padding-top: 15px;
+      width: 75px;
+      text-align: right;
+      background: #eef3f7;
+    }
+    &._part-number {
+      width: 185px;
+      cursor: text;
+    }
+    &._description {
+      width: 290px;
+      cursor: text;
+    }
+    &._qty {
+      width: 104px;
+      cursor: text;
+    }
+    &._uom {
+      width: 104px;
+      border-right: 0;
+    }
+  }
+  &__th {
+    padding: 17px 11px;
+    font-size: 13px;
+    font-weight: 700;
+    color: $v--color-woodsmoke;
+  }
+  &__col {
+    padding: 11px 20px;
+    &._uom {
+      padding-left: 10px;
+    }
+  }
+  &__validate {
+    background: rgba(250, 189, 189, 0.35);
+    .rfq-add-parts-table__col input {
+      background: rgba(250, 189, 189, 0);
+    }
+    .rfq-add-parts__textarea textarea {
+      background: rgba(250, 189, 189, 0);
+    }
+  }
+}

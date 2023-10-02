@@ -1,0 +1,41 @@
+@import "./src/styles/consts";
+
+.circle-notification{
+  background-color: $orange-color;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 35px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.notif{
+  padding: 15px 20px;
+  background-color: #202021;
+  border-radius: 5px;
+  max-width: 300px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  border: 1px solid #3D3D3D;
+  transform: translateX(150%);
+  transition: all 0.2s linear;
+  svg{
+    width: 20px;
+  }
+  &__message{
+    margin-left: 15px;
+    color: #FFFFFF;
+  }
+}
+.active-error,
+.active-success{
+  transform: translateX(0);
+}

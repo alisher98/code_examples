@@ -1,0 +1,84 @@
+@import "../../styles/consts";
+
+.parameters{
+  padding: 20px 0 59px;
+  font-family: "Museo Sans Cyrl 500";
+  &__title{
+    @include  section-title;
+  }
+  &__block{
+    max-width: 1154px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    &-wrapper{
+      max-width: 547px;
+      width: 100%;
+    }
+    &-name,
+    &-reaction,
+    &-notif,
+    &-time{
+      &__title{
+        @include section-block-title;
+        margin: 24px 0 5px;
+      }
+      &__title:nth-child(1){
+        margin-bottom: 9px;
+      }
+      &__select{
+        border: 1px solid #3D3D3D;
+        color: #FFFFFF;
+        font-size: 15px;
+        line-height: 18px;
+        width: 100%;
+        height: 45px;
+        display: flex;
+        align-items: center;
+      }
+      &__subtitle{
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 30px;
+        color: #FFFFFF;
+        opacity: 0.88;
+        margin-right: 24px;
+      }
+      &__wrapper{
+        margin-bottom: 19px;
+      }
+    }
+    &-reaction{
+      &__select{
+        max-width: 294px;
+        width: 100%;
+      }
+      &__wrapper{
+        &:nth-child(4){
+          margin-bottom: 4px;
+        }
+      }
+    }
+    &-time{
+      display: flex;
+      justify-content: space-between;
+      &__select{
+
+      }
+      &__hour,
+      &__date{
+        @include time-picker;
+        width: 250px;
+      }
+      .ant-picker:hover, .ant-picker-focused{
+        border-color: #3D3D3D;
+      }
+    }
+  }
+}
+
+.ant-picker-panel{
+  width: 280px;
+}
+.ant-picker-panel-container{
+}

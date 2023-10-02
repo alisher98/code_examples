@@ -1,0 +1,100 @@
+.access{
+  padding: 20px 0 185px;
+  position: relative;
+  font-family: "Museo Sans Cyrl 500";
+  &__title{
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 30px;
+    color: #FFFFFF;
+    margin-bottom: 24px;
+    font-family: "Museo Sans Cyrl 700";
+  }
+  &__wrapper{
+    display: flex;
+    min-height: 677px;
+  }
+  &__search{
+    width: 38%;
+    margin-right: 4%;
+    &-wrapper{
+      margin-bottom: 21px;
+      #access-input{
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 23px;
+        color: #727273;
+        div{
+          margin-bottom: 10px;
+        }
+        .access__input-wrapper{
+          position: relative;
+        }
+      }
+      input{
+        width: 100%;
+      }
+      svg{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        left: 15px;
+      }
+    }
+  }
+  &__send-all{
+    font-size: 14px;
+    line-height: 30px;
+    color: #FFFFFF;
+    opacity: 0.88;
+    margin-bottom: 24px;
+    span{
+      margin-right: 24px;
+    }
+  }
+  .none{
+    display: none;
+  }
+  .emptyBox{
+    width: 100%;
+    height: 54px;
+  }
+  &__allow{
+    width: 58%;
+    h4{
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 23px;
+      text-transform: uppercase;
+      color: #727273;
+      margin-bottom: 10px;
+    }
+    &-container{
+      border: 1px solid #3D3D3D;
+      padding: 10px 16px;
+      height: 100%;
+    }
+    &-department,
+    &-employee,
+    &-criterion{
+      &__title{
+        font-size: 12px;
+        line-height: 23px;
+        text-transform: uppercase;
+        color: #727273;
+      }
+      &__box{
+        display: flex;
+        flex-wrap: wrap;
+      }
+    }
+    .tag{
+      margin: 0 5px 10px 0;
+      svg{
+        cursor: pointer;
+      }
+    }
+  }
+}
+

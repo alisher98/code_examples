@@ -1,0 +1,36 @@
+.input{
+  background-color: #202021;
+  border: 1px solid #3D3D3D;
+  padding: 14px 20px 14px 55px;
+  outline: none;
+  color: white;
+  &::placeholder{
+    color: #727273;
+    text-transform: uppercase;
+  }
+}
+.access-input::placeholder{
+  font-family: 'Museo Sans Cyrl 700';
+}
+.postline-input{
+  height: 45px;
+  width: 205px;
+  background-color: #202021;
+  border: 1px solid #3D3D3D;
+  padding: 14px 20px 14px 55px;
+  outline: none;
+  color: white;
+}
+.post-title-input{
+  width: 100%;
+  padding-left: 10px;
+  border-bottom: none;
+  font-size: 20px;
+  &::placeholder{
+    color: #FFFFFF;
+    font-style: italic;
+    text-transform: unset;
+    font-size: 13px;
+    font-family: 'Museo Sans Cyrl 700';
+  }
+}

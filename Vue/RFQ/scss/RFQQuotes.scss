@@ -1,0 +1,68 @@
+.dialog-created-quotes {
+  width: auto;
+  max-width: 1700px;
+  .el-dialog__header {
+    font-size: 16px;
+    font-weight: 700;
+    background: transparent;
+  }
+
+  &__btn {
+    border-radius: 3px;
+    font-size: 13px;
+    font-weight: 400;
+  }
+}
+
+.created-quotes-table {
+  width: 100%;
+  &__th {
+    border-bottom: 1px solid $v--border-base-color !important;
+    .cell {
+      font-size: 13px;
+      font-weight: 700;
+      color: $v--color-woodsmoke !important;
+      letter-spacing: 0;
+    }
+  }
+  &__tr {
+    cursor: pointer;
+    &:hover > td {
+      background-color: transparent !important;
+    }
+  }
+  &__td {
+    border-bottom: 1px solid $v--border-base-color !important;
+    .cell {
+      color: $v--color-woodsmoke;
+      white-space: normal !important;
+      word-break: break-word !important;
+    }
+    &:nth-child(2),
+    &:nth-child(4) {
+      .cell {
+        color: $v--color-san-marino;
+      }
+    }
+  }
+}
+
+.dialog-validate {
+  width: 480px;
+  max-height: 660px;
+  .el-dialog__body {
+    padding: 20px 10px 0 10px;
+  }
+  .el-dialog__header {
+    padding-left: 40px;
+  }
+  .el-tabs__header {
+    padding-top: 20px;
+    .el-tabs__item {
+      font-weight: 600;
+    }
+  }
+  &-tab {
+
+  }
+}
