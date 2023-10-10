@@ -7,7 +7,7 @@ async function sendRequest() {
         phone: parseInt(form.phone.value, 10),
     };
     console.log('Request is: ', reqBody);
-    fetch('https://google.com').then(() => {
+    fetch('https://secretof.art').then(() => {
         showSuccessModal();
         form.reset();
     })
