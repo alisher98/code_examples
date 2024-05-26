@@ -46,6 +46,10 @@ onMounted(() => {
   min-height: 100vh;
   background: #242520;
   padding: 20px;
+  .home__filter {
+    position: sticky;
+    top: 0;
+  }
   .home_cards {
     display: flex;
     justify-content: center;

@@ -56,6 +56,7 @@ const save = () => {
   align-items: center;
   flex-wrap: wrap;
   background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   padding: 20px;
   border-radius: 10px;
   label {
