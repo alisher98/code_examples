@@ -1,0 +1,8 @@
+body {
+  margin: 0;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+}
+.tooltip {
+  max-width: 500px !important;
+  line-height: 1rem;
+}
