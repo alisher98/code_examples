@@ -114,12 +114,6 @@ const getColStyle = (item) => {
       bottom: -10px;
       width: 100%;
       border-top: 1px solid black;
-      &--positive {
-        color: red;
-      }
-      &--negative {
-        color: green;
-      }
     }
     &__name {
       cursor: help;
