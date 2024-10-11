@@ -12,16 +12,21 @@ const calculateHeight = (item) => {
   return Math.abs(item.quantity) / maxQuantity * maxHeight;
 }
 
-const getColStyle = (item) => {
+const getColStyle = (item, type) => {
+  if (type === 'positive' && !item.quantity > 0) {
+    return { height: 0 }
+  }
+  if (type === 'negative' && !item.quantity < 0) {
+    return { height: 0 }
+  }
   const height = calculateHeight(item);
   const styleObj = {};
-  if (item.quantity > 0) {
-    styleObj.top = `-${height}px`;
-    styleObj.height = `${height}px`;
-  } else {
-    styleObj.height = `${height}px`;
-  }
+  styleObj.height = `${height}px`;
   return styleObj
+}
+
+const formatNumber = (number) => {
+  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 }
 </script>
 
@@ -30,18 +35,44 @@ const getColStyle = (item) => {
   <h2>{{ title }}</h2>
   <div class="diagram">
     <div class="column-container">
-      <div v-for="(item, i) in colList" :key="i + item.name" class="column">
-        <div
-          class="column__progress"
-          :style="getColStyle(item)"
-          :class="{ 'column__progress--positive': item.quantity > 0, 'column__progress--negative': item.quantity < 0 }"
-        >
-          <div class="column__progress__value" v-tooltip="item.quantity">
-            {{ item.quantity }}
-          </div>
+      <div
+        v-for="(item, i) in colList"
+        :key="i + item.name"
+        class="column column--positive"
+      >
+        <div class="column__progress_value">
+          {{ formatNumber(item.quantity) }}
         </div>
-        <div class="column__name_container" :class="{ 'column__name_container--positive': item.quantity > 0, 'column__name_container--negative': item.quantity < 0 }">
-          <div class="column__name" v-tooltip="item.name">
+        <div
+          v-if="item.quantity > 0"
+          class="column__progress column__progress--positive"
+          :style="getColStyle(item, 'positive')"
+        >
+        </div>
+      </div>
+    </div>
+    <div class="column-container">
+      <div
+        v-for="(item, i) in colList"
+        :key="i + item.name"
+        class="column"
+      >
+        <div
+          v-if="item.quantity < 0"
+          class="column__progress column__progress--negative"
+          :style="getColStyle(item, 'negative')"
+        >
+        </div>
+      </div>
+    </div>
+    <div class="column-container">
+      <div
+        v-for="(item, i) in colList"
+        :key="i + item.name"
+        class="column"
+      >
+        <div class="column__name_container">
+          <div class="column__name">
             {{ item.name }}
           </div>
         </div>
@@ -54,79 +85,71 @@ const getColStyle = (item) => {
 <style lang="scss" scoped>
 .diagram-renderer {
   width: 100%;
-  height: 900px;
   margin-bottom: 50px;
   background: lightgoldenrodyellow;
 
   h2 {
     text-align: center;
     margin: 0;
-    padding: 20px;
+    padding: 40px;
   }
   .diagram {
     max-width: 100%;
     width: fit-content;
+    height: auto;
     margin: 0 auto;
-    height: calc(100% - 68px);
-    padding: 0 70px;
     box-sizing: border-box;
-    overflow: auto;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px 70px 70px;
+    overflow-y: auto;
   }
   .column-container {
     display: flex;
-    position: relative;
-    margin-top: 100px;
+    width: max-content;
   }
   .column {
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     min-width: 50px;
     width: 50px;
     margin-right: 10px;
-    &__progress {
-      display: flex;
-      justify-content: center;
+    &--positive {
       align-items: center;
-      position: relative;
-      &__value {
-        cursor: help;
-        position: absolute;
-        top: -90px;
-        transform: rotateZ(-90deg);
-        text-align: left;
-        min-width: 100px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
+      justify-content: flex-end;
+    }
+    &__progress_value {
+      font-weight: 600;
+      writing-mode: vertical-lr;
+      margin-bottom: 40px;
+      transform: rotate(180deg);
+    }
+    &__progress {
+      width: 100%;
       &--positive {
         background: red;
-        position: absolute;
-        width: 100%;
       }
       &--negative {
         background: green;
       }
     }
     &__name_container {
-      position: absolute;
+      position: relative;
       bottom: -10px;
       width: 100%;
-      border-top: 1px solid black;
+      border-bottom: 1px solid black;
+      padding-bottom: 10px;
+      writing-mode: vertical-lr;
+      display: flex;
+      align-items: center;
+      transform: rotate(180deg);
     }
     &__name {
-      cursor: help;
-      position: absolute;
-      left: -110px;
-      bottom: -135px;
-      min-width: 225px;
-      max-width: 225px;
-      text-align: right;
       white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      transform: rotateZ(-80deg);
+      transform: rotate(10deg);
+      margin-left: 17%;
     }
   }
 }
